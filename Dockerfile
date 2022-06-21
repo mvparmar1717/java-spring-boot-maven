@@ -7,7 +7,11 @@ COPY ./target/hello-world-spring-boot-pom-0.0.1-SNAPSHOT.jar /usr/local/tomcat/w
 
 EXPOSE  8080
 
-USER hello-world-spring-boot-pom
+# Add none root user
+CMD  useradd admin && echo "admin:admin"
+CMD  chpasswd
+CMD  adduser admin sudo
+USER admin
 
 WORKDIR /usr/local/tomcat/webapps
 
