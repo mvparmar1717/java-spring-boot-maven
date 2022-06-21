@@ -8,7 +8,7 @@ COPY ./target/hello-world-spring-boot-pom-0.0.1-SNAPSHOT.jar /usr/local/tomcat/w
 EXPOSE  8080
 
 # Add none root user
-RUN  useradd -m admin && echo "admin:admin" |  chpasswd &&  usermod -aG wheel  admin
+CMD useradd -m admin && echo "admin:admin" |  chpasswd &&  usermod -aG wheel  admin
 
 WORKDIR /usr/local/tomcat/webapps
 
