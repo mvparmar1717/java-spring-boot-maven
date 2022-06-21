@@ -7,7 +7,7 @@ COPY ./target/hello-world-spring-boot-pom-0.0.1-SNAPSHOT.jar /usr/local/tomcat/w
 
 EXPOSE  8080
 
-USER jenkins
+USER hello-world-spring-boot-pom
 
 WORKDIR /usr/local/tomcat/webapps
 
