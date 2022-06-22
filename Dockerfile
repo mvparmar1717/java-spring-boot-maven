@@ -1,15 +1,16 @@
-FROM tomcat:8.0.51-jre8-alpine
+FROM openjdk:12-alpine
 
 MAINTAINER mvparmar1717@gmail.com
 
 # copy war file on to container
-COPY ./target/hello-world-spring-boot-pom-0.0.1-SNAPSHOT.jar /usr/local/tomcat/webapps
+COPY target/hello-world-spring-boot-pom-0.0.1-SNAPSHOT.jar /helloworld.jar
 
-EXPOSE  8081
+EXPOSE  8080
 
 # Add none root user
-CMD useradd -m admin && echo "admin:admin" |  chpasswd &&  usermod -aG wheel  admin
+#CMD useradd -m admin && echo "admin:admin" |  chpasswd &&  usermod -aG wheel  admin
 
-WORKDIR /usr/local/tomcat/webapps
+WORKDIR /usr/local/
 
-CMD ["catalina.sh","run"]
+#CMD ["catalina.sh","run"]
+CMD ["java" , "-jar, "/helloworld.jar]
