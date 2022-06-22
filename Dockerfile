@@ -5,7 +5,7 @@ MAINTAINER mvparmar1717@gmail.com
 # copy war file on to container
 COPY target/hello-world-spring-boot-pom-0.0.1-SNAPSHOT.jar /helloworld.jar
 
-EXPOSE  8181
+#EXPOSE  8080
 
 # Add none root user
 #CMD useradd -m admin && echo "admin:admin" |  chpasswd &&  usermod -aG wheel  admin
