@@ -12,5 +12,5 @@ CMD useradd -m admin && echo "admin:admin" |  chpasswd &&  usermod -aG wheel  ad
 
 WORKDIR /usr/local/tomcat/webapps
 
-CMD ["java" , "-jar, "/hello-world-spring-boot-pom-0.0.1-SNAPSHOT.war]
+#CMD ["java" , "-jar, "/hello-world-spring-boot-pom-0.0.1-SNAPSHOT.war]
 CMD ["catalina.sh","run"]
