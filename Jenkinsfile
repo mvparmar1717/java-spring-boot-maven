@@ -46,7 +46,7 @@ pipeline {
 			     withCredentials([string(credentialsId: 'dockerhubC', variable: 'dockerhubC')]){
                  sh 'docker login docker.io -u mvparmar1717 -p ${dockerhubC}'
                  echo "Push Docker Image to DockerHub : In Progress"
-				 sh 'docker push mvparmar1717/java-spring-boot-maven:latest'
+				 sh 'docker push mvparmar1717/java-spring-boot-maven1:latest'
 				 echo "Push Docker Image to DockerHub : In Progress"
 				 }
               }
