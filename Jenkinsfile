@@ -34,6 +34,12 @@ pipeline {
            }
          }
 
+        stage('Run Docker Image') {
+                   steps {
+                        sh 'docker run -d --name mvnspring -p 8090:8080 mvparmar1717/java-spring-boot-maven .'
+                   }
+                 }
+
         stage('Upload Docker to DockerRegistry') {
            steps {
 		      script {
