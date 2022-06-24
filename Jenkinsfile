@@ -54,7 +54,7 @@ pipeline {
         }
 
 
-        stage('Deploy to Production') {
+        stage('Deploy for demo') {
             steps {
                 sh 'date;date'
             }
