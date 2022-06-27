@@ -34,6 +34,11 @@ pipeline {
            }
          }
 
+        stage('Delete old Docker Image') {
+                           steps {
+                                sh 'docker rm mvnspring1'
+                           }
+                         }
         stage('Run Docker Image') {
                    steps {
                         sh 'docker run -d --name mvnspring1 -p 8090:8080 mvparmar1717/java-spring-boot-maven1'
