@@ -36,7 +36,7 @@ pipeline {
 
         stage('Delete old Docker Image') {
                            steps {
-                                sh 'docker rm mvnspring1'
+                                sh 'docker rm -f mvnspring1'
                            }
                          }
         stage('Run Docker Image') {
