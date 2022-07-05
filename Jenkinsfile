@@ -31,6 +31,7 @@ pipeline {
         stage('Build Docker Image') {
            steps {
                 sh 'docker build -t mvparmar1717/java-spring-boot-maven1 .'
+                sh "docker tag mvparmar1717/java-spring-boot-maven1:latest mvparmar1717/java-spring-boot-maven1:${VERSION}"
            }
          }
 
@@ -42,6 +43,7 @@ pipeline {
         stage('Run Docker Image') {
                    steps {
                         sh 'docker run -d --name mvnspring1 -p 8090:8080 mvparmar1717/java-spring-boot-maven1'
+
                    }
                  }
 
@@ -57,6 +59,7 @@ pipeline {
               }
             }
         }
+
 
 
         stage('Deploy for demo') {
